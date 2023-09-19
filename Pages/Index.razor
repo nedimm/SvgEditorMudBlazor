@@ -1,7 +1,9 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<div style="height:80vh">
+    <SVGEditor Input=@Input InputUpdated="(string s) => { Input = s; StateHasChanged(); }" />
+</div>
 
-<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
-<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor!</MudText>
-<MudAlert Severity="Severity.Normal">You can find documentation and examples on our website here: <MudLink Href="https://mudblazor.com" Typo="Typo.body2" Color="Color.Inherit"><b>www.mudblazor.com</b></MudLink></MudAlert>
+@code {
+    private string Input = @"<rect x=""0"" y=""0"" height=""200"" width=""200"" fill=""green"" stroke=""blue"" stroke-width=""2""></rect>";
+}
